@@ -86,13 +86,10 @@
     <p>Your payment is successful.<br>We appreciate your purchase.</p>
     <a class="btn-home" href="index.html">Go Back to Home</a>
   </div>
- <script>
-    // Get payment ID from URL parameter
+<script>
+    // Get payment ID from URL and display
     const urlParams = new URLSearchParams(window.location.search);
-    const pid = urlParams.get('pid');
-
-    // Show payment ID in the span
-    document.getElementById('paymentId').textContent = pid || 'Not Found';
+    document.getElementById("paymentId").textContent = urlParams.get("pid");
   </script>
 </body>
 </html>
