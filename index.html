@@ -1787,32 +1787,32 @@
 
     <div  class="buttons">
   
-  <a class="buy-now1"   href="https://rzp.io/rzp/ncKszYqe"  id="rzp-button1" target="_blank">Buy Now</a>
+  <a class="buy-now1"  id="rzp-button1"  href="https://rzp.io/rzp/ncKszYqe" target="_blank">Buy Now</a>
 </div>
 
   </div>
 </div>
-
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
- 
-  window.onload = function () {
+window.onload = function () {
   var options = {
-    "key": "rzp_live_Rqid2hSfmTha8K",
-    "amount": "247", // ₹247 = 24700 paise
+    "key": "rzp_live_Rqid2hSfmTha8K",  // Replace with your actual Razorpay key
+    "amount": "24700", // ✅ 247 rupees = 24700 paise
     "currency": "INR",
     "name": "all electric accessories",
     "description": "Test Transaction",
-    "handler": function (response){
+    "handler": function (response) {
+      // ✅ Redirect to thank you page with payment ID
       window.location.href = "thankyou.html?pid=" + response.razorpay_payment_id;
     }
   };
+
   var rzp = new Razorpay(options);
-  document.getElementById('rzp-button1').onclick = function(e){
+  document.getElementById('rzp-button1').onclick = function (e) {
     rzp.open();
     e.preventDefault();
   };
-}
-
+};
 </script>
 
 
